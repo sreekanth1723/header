@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">
+                <img src="assets/images/cam1.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                
+              </a>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+      
+        
+        <a class="navbar-brand" [routerLink]="['']" tabindex="-1" aria-disabled="true">Home</a>      
+    </div>
+  </nav>
+
+  <div class="mb-3" style="margin: 10px;">
+        <div class="row " style="flex-wrap: inherit !important;">
+          <div class="col-md-2" style="border: 1px solid #b5b0b0;margin-left:7px;width: 30%">
+                <nav class="nav flex-column" >
+                        <a class="nav-link" [routerLink] ="['../admin']" fragment="comp">Compare</a>
+                        <a class="nav-link" [routerLink] ="['../admin']" fragment="email">Email</a>
+                        <a class="nav-link" [routerLink] ="['../admin']" fragment="env">Environment</a>
+                        <a class="nav-link" [routerLink] ="['../admin']" fragment="link">Link</a>
+                      </nav>
+          </div>
+          <div class="col-md-8" style="width: 70%">
+            <div class="card-body" *ngIf='showEnvironment'>
+            <div style="margin-bottom:5px"> <span>URL1:</span><input type="text" [(ngModel)]='envVariable' name ='envOne'></div>
+
+             <div style="margin-bottom: 10px"><span>URL2:</span><input type="text" [(ngModel)]='envVariable2' name ='envTwo' disabled></div>
+             <button type="button"class="btn btn-primary" (click) ="submit()">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+ 
